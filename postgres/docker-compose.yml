@@ -18,4 +18,9 @@ services:
       POSTGRES_USER: "$DB_USERNAME"
       POSTGRES_PASSWORD: "$DB_PASSWORD"
     volumes:
-      - "${DB_DATA_PATH:-pg_data}":/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+    postgres_data:
+        name: "${DB_DATA_PATH:-postgres_data}"
+        driver: local
