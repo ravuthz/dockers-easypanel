@@ -22,5 +22,5 @@ services:
 
 volumes:
     postgres_data:
-        name: "${DB_DATA_PATH:-postgres_data}"
+        name: "${DB_VOLUME_NAME:-postgres_data}"
         driver: local
